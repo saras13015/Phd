@@ -1,0 +1,5 @@
+%%bash
+
+gfortran -ffree-form get_age.f95
+./a.out
+1984
