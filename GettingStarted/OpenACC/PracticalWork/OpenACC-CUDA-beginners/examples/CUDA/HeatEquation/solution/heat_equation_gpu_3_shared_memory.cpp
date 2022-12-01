@@ -1,1 +1,0 @@
-heat_equation_gpu_3_shared_memory.cu
