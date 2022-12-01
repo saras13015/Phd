@@ -40,7 +40,8 @@
 \newpage
 
 \section{Part 1: Introduction}
-This document offers an introduction to porting algorithms on GPU with OpenACC using Colab.
+This document offers an introduction to porting algorithms on GPU with OpenACC using Colab.\\
+
 \section{Part 2: Running a Fortran code in Colab}
 \subsection{About Colab}
 
@@ -51,48 +52,15 @@ This document offers an introduction to porting algorithms on GPU with OpenACC u
 
 
 \subsubsection{OpenACC}
-
-
-
-\subsection{Compiling \& Executing}
-In our particular case, it is relevant now to introduce Fortran. Because it is a high-level computer langage and more important it is a compiled langage. That means it cannot be run until the compilation stage.\\
-In the other hand, we work in the Jupyter Notebook which is an interactive environment and interpreted oriented.\\
-A way to overcome this incompatibility is to write the Fortran code inside a file, then, to execute the file as a script.
-To do so, the fortran kernel is no longer required, and we need to switch to the python kernel to use what we call Magics. They are powerful tools provided by the IPython kernel.
-\begin{itemize}
-
-\item
-\begin{lstlisting}[language=bash]
-%%writefile
+Most of what will be presented here comes from this \href{https://colab.research.google.com/github/ENCCS/OpenACC-CUDA-beginners/blob/colab_gcc/examples/openACC_CUDA_colab.ipynb}{tutorial}.
+Colab is a 
+\begin{lstlisting}
+!nvidia-smi
 \end{lstlisting}
-Writes the content of the cell into a file that should be specify right after the magics command
-\begin{mylisting}
-%%writefile get_age.f95
-
-program get_age
-    real :: year, age
-    print *, 'What year were you born?'
-    read *, year
-    age = 2022 - year
-    print *, 'Your age is', age
-end program get_age
-\end{mylisting}
-\item 
-\begin{lstlisting}[language=bash]
-%%bash
-\end{lstlisting}
-Allow us to run cells with bash.
-\begin{mylisting}
-%%bash
-
-gfortran -ffree-form get_age.f95
-./a.out
-1984
-\end{mylisting}
-\end{itemize}
-\subsection{Results}
-
-\section{Part 2: OpenACC on Colab}
+Here the outcome of this command:
+\begin{center}
+\includegraphics[scale=0.8]{nvidiasmi.png}
+\end{center}
 
 
 \end{document}

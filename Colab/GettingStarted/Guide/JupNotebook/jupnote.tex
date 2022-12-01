@@ -40,11 +40,11 @@
 \newpage
 
 \section{Part 1: Introduction}
-This document summarizes the different stages to run a Fortran code using Colab in the first part. In a second part, how to run it using OpenACC.\\
+This document summarizes the different stages to run a Fortran code using Jupyter Notebook.
 The aim of this report is to record a guide but also to list some errors encountered doing so.
-\section{Part 2: Running a Fortran code in Colab}
-\subsection{Installing Colab}
-In our particular case, we want to work with Fortran. To do so, we have to set up Colab to run with this specific language.
+\section{Part 2: Running a Fortran code in Jupyter}
+\subsection{Running a simple code}
+In our particular case, we want to work with Fortran. To do so, we have to set up Jupyter Notebook to run with this specific language, since a python kernel is set by default.\\
 First and foremost, we should install a Fortran kernel. One can refer \href{https://github.com/ZedThree/jupyter-fortran-kernel}{here} to get more details about the process.\\
 
 \subsubsection{Cloning}
@@ -109,7 +109,7 @@ A way to solve this problem can be found \href{https://stackoverflow.com/questio
 
 \subsection{Compiling \& Executing}
 In our particular case, it is relevant now to introduce Fortran. Because it is a high-level computer langage and more important it is a compiled langage. That means it cannot be run until the compilation stage.\\
-In the other hand, we work in the Jupyter Notebook which is an interactive environment and interpreted oriented.\\
+In the other hand, we work in the Jupyter Notebook which is an interactive environment and interpreted oriented. A simple adding in the program as a \textit{read} instruction cannot be handle this way.\\
 A way to overcome this incompatibility is to write the Fortran code inside a file, then, to execute the file as a script.
 To do so, the fortran kernel is no longer required, and we need to switch to the python kernel to use what we call Magics. They are powerful tools provided by the IPython kernel.
 \begin{itemize}
@@ -143,18 +143,6 @@ gfortran -ffree-form get_age.f95
 1984
 \end{mylisting}
 \end{itemize}
-\subsection{Results}
 
-\section{Part 2: OpenACC on Colab}
-Most of what will be presented here comes from this \href{https://colab.research.google.com/github/ENCCS/OpenACC-CUDA-beginners/blob/colab_gcc/examples/openACC_CUDA_colab.ipynb}{tutorial}.
-\subsection{Starting}
-Colab is a 
-\begin{lstlisting}
-!nvidia-smi
-\end{lstlisting}
-Here the outcome of this command:
-\begin{center}
-\includegraphics[scale=0.8]{nvidiasmi.png}
-\end{center}
 
 \end{document}
