@@ -1,8 +1,8 @@
-COMP=pgi
+COMP=gcc
 
-ifeq ($(COMP),pgi)
-FC=pgf90
-FFLAGS=-g -O3 -acc -Minfo=accel -ta=nvidia
+ifeq ($(COMP),gcc)
+FC=gfortran
+FFLAGS=-g -O3 -fopenacc
 RUN=
 endif
 

@@ -15,19 +15,25 @@ program vectorsum
   call cpu_time(t1)
   ! Initialization of vectors
   call cpu_time(t5)
+  ! !$acc kernels
   do i = 1, nx
      vecA(i) = 1.0_rk/(real(nx - i + 1, kind=rk))
      vecB(i) = vecA(i)**2
   end do
+  !  !$acc end kernels
   call cpu_time(t6)
 
   ! TODO
   ! Implement vector addition on device with OpenACC 
   ! vecC = vecA + vecB
   call cpu_time(t3)
+!   !$acc data copy(vecA, vecB, vecC)
+  !$acc kernels
   do i = 1, nx
         vecC(i) = vecA(i) + vecB(i)
   end do
+  !$acc end kernels
+! !$acc end data
   call cpu_time(t4)
 
   ! Compute the check value

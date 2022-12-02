@@ -1,0 +1,3 @@
+#ifdef _OPENACC
+	use openacc
+#endif
