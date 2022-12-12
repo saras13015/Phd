@@ -1,0 +1,119 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{listings}
+
+\newtcblisting{mylisting}{
+  listing only,
+  hbox,
+  colframe=cyan,
+  colback=cyan!10,
+  listing options={
+    language=Fortran,
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    columns=fullflexible
+  },
+}
+
+%hyperlink parameters
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+
+% Code style font
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+%\newcommand{\code}{\texttt}
+
+% Fortran source code style
+
+
+
+\author{Sarah}
+\title{Paper reviews}
+%\date{today}
+
+\begin{document}
+\maketitle{}
+\newpage
+
+\section{URANOS: a GPU accelerated Navier-Stokes solver for compressible wall-bounded flows}
+\subsection{Context}
+\begin{itemize}
+\item Solver for high-fidelity modeling of comopressible wall flows
+\item Massively parallel GPU-accelerated
+\item Based on modern high\-fidelity and high-resolution discretization strategies for time-accurate compressible flow predictions
+\item Provides 
+\begin{itemize}
+\item 6 different convective scheme implementations
+\item a cutting-edge method for viscous terms treatment
+\item 3 different frameworks for turbulence modeling (DNS, LES, WMLES)
+\item A high-order FD approach (from 2nd -> $6^{th}$ order spatial accuracy)
+\end{itemize}
+\item Combines multiple 3D MPI parallelization strategies with the open standard, OpenACC, f or machine wide, on node, and on GPU parallelism
+\end{itemize} 
+\subsection{Numerical methods}
+\begin{itemize}
+\item High-Order FD approach matching for both uniform and non-uniform Cartesian structures
+\item 6 different convective schemes
+\begin{itemize}
+\item A central, zero-dissipative, $6^{th}$ order fully-split convective Energy-Preserving (EP) method to deal primarily with shock-free or smooth flows
+\item 3 increasingly high-order WENO mehtods
+\item 2 low-dissipative Targeted Essentially Non-Oscillatory (TENO) approaches.
+\end{itemize}
+\item Shock-capturing method
+
+\end{itemize}
+
+
+\subsection{Acceleration}
+\begin{itemize}
+\item GPU porting
+\item Different approaches vary in terms of their degrees of portability, adaptability and computational performance
+\item Things to consider: the initial cost fo code development \& the long term maintenance costs
+\item Better to have a single code base which targets different architectures
+\item Rather than programming with vendor-specific languages, the programmer can focus on accelerate in a vendor-neutral manner.
+\item The compiler transforms directives into device-specific application code.
+\end{itemize}
+
+\subsubsection{OpenACC \& MPI}
+\begin{itemize}
+\item H2D/D2H data movements reduced as much as possible
+\item \code{parallel} construct is preferrred rather than \code{kernels} as it allows the user more control.
+\item And it enables controlling the loop granularity through the clauses (loop, ...)
+\begin{itemize}
+\item Coarse-grained parallelism (\textit{gang})
+\item Fine-grained parallelism (\textit{worker})
+\item Single Instruction Multiple Data level (\textit{vector})
+\end{itemize}
+\item \code{collapse} clause allow unifying all the iteration of nested loops in a single one
+\end{itemize}
+
+\begin{itemize}
+\item MPI: the standard for inter-node data transfers
+\item Transition to a multi-GPU logic is not straightforward and hardware-unrelated.
+\end{itemize}
+
+\subsection{Discussion}
+
+\section{Glossaire}
+\textbf{Time-accurate:} That can provide solutions to the full unsteady equations. The time step is used through the grid.\\
+\textbf{GPU-Direct/non-Direct}:
+
+
+
+
+\end{document}
