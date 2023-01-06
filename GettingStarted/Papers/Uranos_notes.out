@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{URANOS: a GPU accelerated Navier-Stokes solver for compressible wall-bounded flows}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Context}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Numerical methods}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Convective fluxes}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Shock detection}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Viscous fluxes discretization}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Numerical treatment of temporal components}{subsection.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.3}{Acceleration}{section.1}% 8
+\BOOKMARK [3][-]{subsubsection.1.3.1}{OpenACC \046 MPI}{subsection.1.3}% 9
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Acceleration performance analysis}{subsection.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.4}{Validation and Results}{section.1}% 11
+\BOOKMARK [2][-]{subsection.1.5}{Conclusion}{section.1}% 12
+\BOOKMARK [1][-]{section.2}{Glossary}{}% 13

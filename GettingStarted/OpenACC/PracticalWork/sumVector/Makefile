@@ -2,7 +2,7 @@ COMP=gcc
 
 ifeq ($(COMP),gcc)
 FC=gfortran
-#FFLAGS=-g -O3 -fopenacc
+#FFLAGS=-g -O3 -fopenacc -fopt-info-note-omp
 FFLAGS=-g -O3
 RUN=
 endif
