@@ -1,0 +1,576 @@
+1                ! MPI parallelization              actual number of processes in x-direction
+1                                                   actual number of processes in y-direction
+1                                                   actual number of processes in z-direction
+0                                                   additional phantom points for volumes in x-direction
+0                                                   additional phantom points for volumes in y-direction
+0                                                   additional phantom points for volumes in z-direction
+false  false                                         read big_endian binary files (for IDRIS)
+false                                         write big_endian binary files (for IDRIS and transform=TRUE)
+false                                         transform the grid
+false                                               nondimensional grid
+1.0                                                 reference length
+1634                                                umax
+669.14                                              umin
+1208.18                                             uc
+0.2785                                              rho avg
+4.1455e-5                                           mu avg
+0.41                                                Yst
+true                                                same Schmidt and Lewis equal to unity (for the diffusion coefficient)
+0                                                   number of steady state species (for reduced mechanism)
+3                                                   index species (Damkohler H2O by default)
+8                                                   species number for scalar properties (0: mixture fraction)
+200                                                 number of bins to create pdfs, conditional averages...
+restart                                             plane type: XY, XZ, YZ, restart, volume
+0                                                   plane number
+false                                               temporal average
+false                                               spatial average
+false                                               conditional average
+false                                               pdfs
+false                                               spectras
+false                                               similarity solutions in x-direction
+true                                                second loop
+false           ! Post treatment options            read previous stat
+1                                                    start file (file in the times_stat.out)
+75                                                   end file       (idem)
+1                                                   skip file >= 1 (idem)
+
+autocorrelation/spectra coordinates (x,y,z; only one auto-correlation/spectra per posttreatment)
+0.0        0.0        0.0
+
+probe coordinates (name,x,y,z) probe_varmax   0.2075   4.0e-3   0.0 probe_varmin   0.2400   2.0e-3   0.0 probe_zr       0.2040   1.0e-3   0.0
+END
+
+! names of the variables to plot ========================
+Density
+Velocity-X
+Velocity-Y
+Velocity-Z
+Temperature
+
+END
+ra_Density
+rv_rho
+fa_Velocity-X
+fv_Velocity-X
+fa_Velocity-Y
+fv_Velocity-Y
+fa_Velocity-Z
+fv_Velocity-Z
+fa_Temperature
+rv_T
+fa_Pressure
+rv_p
+ra_Mach
+ra_Sound_Speed
+ra_Cp
+ra_Therm_Cond
+ra_Gamma
+ra_Dyn_Viscosity
+ra_SGS_Viscosity
+fa_Total_Energy
+fa_Total_Enthalpy
+fa_Enthalpy
+ra_Vorticity
+ra_Enstrophy
+Filter_width
+dx_plus
+dy_plus
+dz_plus
+Index_quality_Celik
+Index_quality_Pope
+Lenght_Taylor
+Lenght_Kolmogorov
+R_11
+R_22
+R_33
+R_12
+R_13
+R_23
+ra_tau_SGS_11
+ra_tau_SGS_22
+ra_tau_SGS_33
+ra_tau_SGS_12
+ra_tau_SGS_13
+ra_tau_SGS_23
+b_11
+b_22
+b_33
+b_12
+b_13
+b_23
+Mt
+TKE
+TKE_Dissipation
+ra_sdr
+fa_TKE_SGS
+ra_tau_iso_SGS
+fa_Y01
+fa_Y02
+fa_Y03
+fa_Y04
+fa_Y05
+fa_Y06
+fa_Y07
+fa_Y08
+fv_Y01
+fv_Y02
+fv_Y03
+fv_Y04
+fv_Y05
+fv_Y06
+fv_Y07
+fv_Y08
+fa_Yss01
+fa_Yss02
+fv_Yss01
+fv_Yss02
+ra_Molar_Mass
+fa_Heat_Rel
+fv_Heat_Rel
+ra_Da
+ra_Da_II
+ra_FI
+ra_proba_pz
+ra_Reactivity
+fa_Heat_Rel_hct
+
+
+fa_Velocity-X
+fv_Velocity-X
+fa_Velocity-Y
+fv_Velocity-Y
+fa_Velocity-Z
+fv_Velocity-Z
+fa_Temperature
+rv_T
+fa_Pressure
+rv_p
+ra_Mach
+ra_Sound_Speed
+ra_Cp
+ra_Therm_Cond
+ra_Gamma
+ra_Dyn_Viscosity
+ra_SGS_Viscosity
+fa_Total_Energy
+fa_Total_Enthalpy
+fa_Enthalpy
+ra_Vorticity
+ra_Enstrophy
+Filter_width
+dx_plus
+dy_plus
+dz_plus
+Index_quality_Celik
+Index_quality_Pope
+Lenght_Taylor
+Lenght_Kolmogorov
+R_11
+R_22
+R_33
+R_12
+R_13
+R_23
+ra_tau_SGS_11
+ra_tau_SGS_22
+ra_tau_SGS_33
+ra_tau_SGS_12
+ra_tau_SGS_13
+ra_tau_SGS_23
+b_11
+b_22
+b_33
+b_12
+b_13
+b_23
+Mt
+TKE
+TKE_Dissipation
+ra_sdr
+fa_TKE_SGS
+ra_tau_iso_SGS
+fa_Y01
+fa_Y02
+fa_Y03
+fa_Y04
+fa_Y05
+fa_Y06
+fa_Y07
+fa_Y08
+fv_Y01
+fv_Y02
+fv_Y03
+fv_Y04
+fv_Y05
+fv_Y06
+fv_Y07
+fv_Y08
+fa_Yss01
+fa_Yss02
+fv_Yss01
+fv_Yss02
+ra_Molar_Mass
+fa_Heat_Rel_hct
+ra_Da
+ra_Da_II
+ra_FI
+ra_proba_pz
+ra_Reactivity
+ra_W01_hct
+fa_W01_hct
+ra_W02_hct
+fa_W02_hct
+ra_W03_hct
+fa_W03_hct
+ra_W04_hct
+fa_W05_hct
+ra_W05_hct
+fa_W05_hct
+ra_W06_hct
+fa_W06_hct
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ra_Heat_Rel_hct
+fa_Heat_Rel_hct
+ra_Density
+rv_rho
+fa_Velocity-X
+fv_Velocity-X
+fa_Velocity-Y
+fv_Velocity-Y
+fa_Velocity-Z
+fv_Velocity-Z
+fa_Temperature
+rv_T
+fa_Pressure
+ra_Pressure
+rv_p
+ra_Mach
+fa_Mach
+ra_Sound_Speed
+ra_Cp
+ra_Therm_Cond
+ra_Gamma
+ra_Dyn_Viscosity
+ra_Kin_Viscosity
+ra_SGS_Viscosity
+fa_Total_Energy
+fa_Total_Enthalpy
+fa_Enthalpy
+ra_Vorticity
+ra_Enstrophy
+dx_plus
+dy_plus
+dz_plus
+Index_quality_Celik
+Index_quality_Pope
+Reynolds_Taylor
+Lenght_Taylor
+Lenght_Kolmogorov
+R_11                      ! Reynolds tensor
+R_22
+R_33
+R_12
+R_13
+R_23
+Mt                        ! Mach turbulent
+TKE                       ! Turbulent Kinetic Energy
+TKE_Dissipation           ! TKE dissipation rate
+ra_sdr
+fa_TKE_SGS
+ra_tau_iso_SGS
+END
+fa_Mass_Frac
+fv_Mass_Frac
+fa_Mass_Frac_steady
+fv_Mass_Frac_steady
+fa_Molar_Mass
+ra_Molar_Mass
+fa_Heat_Rel
+fv_Heat_Rel
+fa_Productions
+ra_Da
+ra_Da_II
+ra_FI
+rv_FI
+ra_proba_pz
+ra_Reactivity
+Filter_width
+rv_rho_p
+rv_rho_W
+CORR_rho_W
+CORR_rho_p
+CORR_ux
+CORR_vy
+CORR_wz
+CORR_p
+CORR_Zm
+ra_tau_SGS_11
+ra_tau_SGS_22
+ra_tau_SGS_33
+ra_tau_SGS_12
+ra_tau_SGS_13
+ra_tau_SGS_23
+b_11                      ! Anisotropy tensor
+b_22
+b_33
+b_12
+b_13
+b_23
+ra_Heat_Rel_hct
+fa_Heat_Rel_hct
+ra_W01_hct
+fa_W01_hct
+ra_W02_hct
+fa_W02_hct
+ra_W03_hct
+fa_W03_hct
+ra_W04_hct
+fa_W05_hct
+ra_W05_hct
+fa_W05_hct
+ra_W06_hct
+fa_W06_hct
+Alphaz ! diffusion coefficient with Le /= 1
+Cp
+Density
+Detector_shock
+Detector_shock_Ducros
+SGS_Viscosity
+SGS_Viscosity_Smagorinsky
+Dyn_Viscosity
+Therm_Cond
+Enthalpy
+Gamma
+Mass_Fractions
+Pressure
+Temperature
+Mach
+Velocity-X
+Velocity-Y
+Velocity-Z
+sDensity
+Takeno
+Mean_Molar_Mass
+
+Q
+Lambda2
+
+Yss01 ! Mass_Fractions_steady
+Yss02 ! Mass_Fractions_steady
+
+Damkohler
+Damkohler_II
+Detector_reaction
+Detector_reaction_SGS
+Reactivity_rate
+Heat_Rel
+Heat_Rel_SGS
+Productions
+W01_SGS
+W02_SGS
+W03_SGS
+
+Segregation
+MIL_zjm
+MIL_zjp
+MIL_intzjmp
+MIL_prob_mil
+MIL_progress_variable
+Filter_width      ! Mesh
+END !====================================================
+
+
+MIL_wo2mil
+MIL_wo2sauts
+MIL_wo2bur
+MIL_yoequm
+MIL_yoburnt
+
+Eq_SGS_variance
+
+Total_Energy
+
+Mesh_aspect_ratio ! Mesh
+Zm
+
+Vorticity-X
+Vorticity-Y
+Vorticity-Z
+
+taumix
+
+
+ra_Density
+rv_rho
+fa_Velocity-X
+fv_Velocity-X
+fa_Velocity-Y
+fv_Velocity-Y
+fa_Velocity-Z
+fv_Velocity-Z
+fa_Temperature
+fa_Pressure
+ra_Mach
+ra_Sound_Speed
+ra_Cp
+ra_Therm_Cond
+ra_Gamma
+ra_Dyn_Viscosity
+ra_SGS_Viscosity
+fa_Total_Energy
+fa_Total_Enthalpy
+fa_Enthalpy
+Filter_width
+Index_quality_Celik
+Index_quality_Pope
+Lenght_Taylor
+Lenght_Kolmogorov
+R_11                      ! Reynolds tensor
+R_22
+R_33
+R_12
+R_13
+R_23
+b_11                      ! Anisotropy tensor
+b_22
+b_33
+b_12
+b_13
+b_23
+Mt                        ! Mach turbulent
+TKE                       ! Turbulent Kinetic Energy
+TKE_Dissipation           ! TKE dissipation rate
+fa_TKE_SGS
+fa_Mass_Frac
+fv_Mass_Frac
+fa_Mass_Frac_steady
+fv_Mass_Frac_steady
+ra_Molar_Mass
+fa_Heat_Rel
+fv_Heat_Rel
+ra_Da
+ra_Da_II
+ra_FI
+ra_proba_pz
+ra_Reactivity
+
+
+W_scal_i
+
+
+
+
+
+
+fa_xiv2
+fa_xiv3
+fa_xixi
+
+xiv2
+xiv3
+xixi
+
+
+
+
+
+
+SGS_Therm_Cond
+
+
+sTemperature
+sPressure
+sVelocity-X
+sVelocity-Y
+sVelocity-Z
+
+
+Rank
+
+
+dt_min
+dt_mass
+dt_therm
+dt_CFL
+dt_chem
+
+
+! names of the variables to plot
+!====================================
+Total_Temppre
+
+Divergence
+
+Bulk
+Sound_Speed
+
+
+
+ra_Velocity-X
+ra_Velocity-Y
+ra_Velocity-Z
+ra_Temperature
+ra_Pressure
+ra_Mach
+ra_Y05
+ra_Y06
+ra_Y07
+ra_Dyn_Viscosity
+
+ra_Vorticity
+ra_Prandtl
+ra_sdr
+ra_Y                   ! Y ( max ( inp % index_scalar , 1 ) )
+
+ra_Heat_Rel
+ra_max_Heat_Rel
+
+ra_Total_Energy
+ra_Total_Enthalpy
+ra_Enthalpy
+
+rv_p
+rv_T
+
+rv_sdr
+
+fa_Prandtl
+fa_sdr
+fa_Cp
+fa_Y                   ! Y ( max ( inp % index_scalar , 1 ) )
+fa_Y05
+
+fa_Dyn_Viscosity
+
+fv_sdr
+
+domega
+dtheta
+dmix
+dvis99
+
+Reynolds_Taylor
+Reynolds
+
+TKE_Pressure_Strain
+TKE_Transport
+TKE_Mass_Flux_Coupl
+TKE_Production
+TKE_Convection
+!====================================
+END

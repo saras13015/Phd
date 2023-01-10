@@ -1,0 +1,70 @@
+================================================================
+|
+|		Brief note - adding WENO5 
+|		-------------------------------
+|			*  WENO 5 / WENO 7 *
+|	
+|		Created: 09.05.2022
+================================================================
+
+
+ -------------------
+|  module_weno.f90  |
+ -------------------
+
+> Coefficients for 5-th order Crj ('cweno')
+	- Cf. Shu-WENO-notes.pdf (p.8) for k=3
+ ____________________________
+|      ||      |      |      |
+|  r   || j=0  |  j=1 |  j=2 |
+|======||======|======|======|
+|      ||      |      |      |
+| -1   || 11/6 | -7/6 |  1/3 |
+|______||______|______|______|
+|      ||      |      |      |
+|  0   || 1/3  |  5/6 | -1/6 |
+|______||______|______|______|
+|      ||      |      |      |
+|  1   || -1/6 |  5/6 |  1/3 |
+|______||______|______|______|
+|      ||      |      |      |
+|  2   ||  1/3 | -7/6 | 11/6 |
+|______||______|______|______|
+
+
+> Coefficients for nonlinear weights 
+	- Cf. Shu-WENO-notes.pdf (p.8) for k=5 and r=2
+ ___________________________________________
+|      ||      |      |      |      |      |
+|  r   || j=0  |  j=1 |  j=2 |  j=3 |  j=4 |
+|______||______|______|______|______|______|
+|      ||      |      |      |      |      |
+|  2   || 2/60 |-13/60| 47/60| 27/60| -3/60|
+|______||______|______|______|______|______|
+
+
+> Coefficients for dr ('dweno')
+	- Cf. Shu-WENO-notes.pdf (p.17) for k=3
+ _______________
+|      ||      |
+|  r   || dr   |
+|======||======|
+|      ||      |
+|  0   || 3/10 |
+|______||______|
+|      ||      |
+|  1   || 3/5  |
+|______||______|
+|      ||      |
+|  2   || 1/10 |
+|______||______|
+
+
+> Smoothness indicators for evaluation of the beta's
+	- Cf. Shu-WENO-notes.pdf (p.19) for k=3
+	
+
+> Definition of paramters for upwind derivatives at the boundaries
+	- Used in the bc_noreflectionweno routine
+		-> We do not use the non-reflection BC for WENO for our case,
+		so we assign the same value than WENO7 case just to run the program.

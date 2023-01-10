@@ -1,0 +1,61 @@
+        INTEGER LENIWK , LENRWK , LENCWK , NK , NLMAX ,
+     1         LOUT   , LINKCK , KMAX   , ITOL  ,
+     2         IOPT   , ITASK  , NEQ    , LRW   ,
+     3         NVODE  , NWT    , NH     , NWDOT ,
+     4         NTOT   , LENI   , LENR   , LENC  ,
+     5         IFLAG  , MM     , II     , NFIT  ,
+     6         LIW    , IVODE  , ITOT   , KK
+!
+!
+      DOUBLE PRECISION RTOL , ATOL , P , RHO_ , RU , RUC , PATM ,
+     *                 OMS  , EPS0
+!
+!---- ORIGINAL
+!      PARAMETER (LENIWK=4000, LENRWK=4000, LENCWK=500, NK=5, NLMAX=55,
+!     1           LOUT=6, LINKCK=25, KMAX=100, ITOL=1, IOPT=0,
+!     2           RTOL=1.0E-6, ITASK=1, ATOL=1.0E-15)
+!----
+!
+!---- MODFX du  03/21/2003
+!      PARAMETER ( LENIWK = 10500   , LENRWK = 60000  , LENCWK = 500 ,
+!     1            NK     = 5       , NLMAX  = 75     , LOUT   = 19  ,
+!     2            LINKCK = 25      , KMAX   = 200    , ITOL   = 1   ,
+!     3            IOPT   = 0       , RTOL   = 1.0D-6 , ITASK  = 1   ,
+!     4            ATOL   = 1.0D-15 )
+!----
+!
+!---- PM  01/08/2012
+! ATOL = 1.0D-14 / RTOL = 1.0D-6 ! Original value
+! ATOL = 1.0D-12 / RTOL = 1.0D-6 ! Change date 10/04/2017
+! ATOL = 1.0D-10 / RTOL = 1.0D-6 ! Change date 10/25/2017
+      PARAMETER ( LENIWK = 4000    , LENRWK = 4000   , LENCWK = 500 ,
+     1            NK     = 5       , NLMAX  = 75     , LOUT   = 19  ,
+     2            LINKCK = 25      , KMAX   = 50     , ITOL   = 1   ,
+     3            IOPT   = 0       , RTOL   = 1.0D-6 , ITASK  = 1   ,
+     4            ATOL   = 1.0D-10 )
+!----
+!
+!-------LOUT is the output for chemkin messages (usually 6, now 19
+!       note if this number is change it must be change also in vode.f
+!       write(19 --> write(??
+!       and LIN
+      INTEGER IWORK
+      DOUBLE PRECISION RWORK , X , Z
+      DIMENSION IWORK (LENIWK) , RWORK (LENRWK) , X (KMAX) , Z(KMAX)
+      CHARACTER CWORK (LENCWK)*16 , KSYM (KMAX)*16 , LINE*80
+      LOGICAL KERR , IERR
+!
+!---- U-PaSR variables
+      DOUBLE PRECISION HF , GAMMASTAR , TAUM
+      DIMENSION HF ( 2 * KMAX + 10 )
+      COMMON /PASRCONS/ HF , GAMMASTAR , TAUM
+!
+      COMMON /RCONS/ P , RU , RHO_ , OMS , EPS0
+!
+      COMMON /ICONS/ KK , NWT , NH , NWDOT
+!
+      COMMON /CKPASR/ IWORK , RWORK , X    , Z    , CWORK ,
+     1                KSYM  , LINE  , NEQ  , LRW  , NVODE ,
+     2                NTOT  , LENI  , LENR , LENC , IFLAG ,
+     3                MM    , II    , NFIT , IERR , KERR  ,
+     4                LIW   , IVODE , ITOT , RUC  , PATM

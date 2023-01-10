@@ -1,0 +1,14 @@
+       INTEGER NOME , idecaly
+!
+!
+       PARAMETER ( NOME = 500 )
+!
+       DOUBLE PRECISION TPS , PA , TSEJOUR , TFINAL , DTIME
+!
+       DOUBLE PRECISION WCUMUL (NOME) , WKMTPS (NOME) , WOME (NOME)
+!
+       PARAMETER ( PA = 5.0D0 , TSEJOUR = 5.0D-3 ,
+     1             TFINAL = 5.D0 * TSEJOUR , DTIME = 1.0D-5 ,
+     2             IDECALY = 5 )
+!
+       COMMON /PARAM/ WOME , WCUMUL , WKMTPS , TPS

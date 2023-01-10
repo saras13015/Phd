@@ -1,0 +1,53 @@
+1                                        ! Main parameters             dimension of the problem
+2                                                                      species variables (= nb of SPECIES in chem.inp)
+0                                                                      passive variables (= 0 or 1)
+0                                                                      variance variables for LES (= 0 or 1)
+false                                                                  manipulate individual files (false by default, 1 restart file / process)
+false                                    ! Initialization              storing only the initial solution
+Sod                                                                    initialization
+false  restart  76                                                     reading a previous restart file (true/false), name, number
+0.0 4.29096632E-04                                                     initial simulation time
+false                                    ! Others                      perturbation (shear layers)
+false                                                                  filter
+3.0e-1   3.0815e-1                                                     filter_start, filter_end
+false  false                               ! Euler/Navier-Stokes       viscous problem (true=NS/false=Euler), viscous time step (true by defaulut if viscous problem)
+false 1                                                                eglib detailed transport (true/false), presision (1,2,3)
+false                                     ! LES                        Large-Eddy Simuation
+WALE          0.10                                                     Viscosity SGS model (Smagorinsky 0.18, StructureFunction 1.4, WALE 0.18)
+false  Yoshizawa   0.0066                                              Isotropic tensor SGS model (true/false, Yoshizawa 0.0066)
+80.0                                                                   weights density percent criteria for discontinuitie zones
+0.7                                                                    SGS Schmidt (0.7 to 1.0)
+0.7                                                                    SGS Prandtl (0.7 to 1.0) -> (0.3 to 0.9)
+false    hybrid_PSR_MIL                   ! Reaction                   reactive problem (true/false), solver (PSR, MIL, hybrid_PSR_MIL)
+false                                                                  filter reaction zones to reduce computational costs
+1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0                                pure fuel composition (calculate: E.R., Detector_reaction, Zm, Deq, reactivity table)
+0.0 0.2527 0.1631 0.0 0.0 0.0 0.5842 0.0 0.0 0.0                       pure oxydizer composition (idem)
+true                                                                   force sumY=1 (true by default)
+false 1.0e-9                             ! Time steps                  fixed time step (true/false, value in seconde)
+0.1  0.5                                                               CFL (min,max<=0.9) convective
+0.5                                                                    Fo (<=0.5) viscous
+20                                                                     DTpermis (<=20K) chemical
+false  1.0e-9                                                          minimum time step value (true/false, value) (recommand 1e-10 min)
+true  15.0                               ! Discontinuities             WENO nonlinear weights (true/false), density percent criteria (value)
+false 1                                                                WENO optimum weights (true/false), order (1, 3, 5)
+1                                        ! Others                      iterations to show information
+10                                                                    iterations frequency to store restart files
+1190                                     ! Stop calculating            walltime in minutes of calculation
+false 100                                                              iterations limit (true/false), maximum iterations
+0.0019191993353033865                                                  time to start recording stat files (seconde)
+1.0e-4                                                                 dt between stat files
+false  0                                                               store stat files (true/false), number of the last stat file
+1                                                                      number of stats
+1.0                                                                    adimensional length for coordinates
+
+! Storing volume files (xmin, xmax, ymin, ymax, zmin, zmax coordinates)
+
+! Storing stat files in XY-plane (Z-coordinates) 
+
+! Storing stat files in XZ-plane (Y-coordinates) 
+
+! Storing stat files in YZ-plane (X-coordinates) 
+
+! Probe coordinates (name, x, y, z) 
+
+END

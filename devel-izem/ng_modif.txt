@@ -1,0 +1,31 @@
+================================================================
+|
+|		Brief note - 'ng' modifications
+|		-------------------------------
+|			*  WENO 5 / WENO 7 *
+|	
+|		Created: 09.05.2022
+================================================================
+
+
+* module_parameters.f90
+	- <order_weno>: declared as in integer
+	- <ng>: is now declared as a plain integer, and not as a parameter as previously
+
+* module_input.f90
+	- <order_weno>: declared as an integer (_inp type_) / defined by default (=5)
+	- <ng>: is now defined regarding the input data 'order_weno' in the input file as:
+		ng = ( order_weno + 1 ) / 2
+
+* module_weno.f90
+
+	- <stencil_m1>, <stencil_m2>: 
+		are not declared as parameters anymore, just as plain integers
+	- <cweno>, <dweno>, <dtweno>, <cnr>, <f_s>, <L_s>: 	
+		are now declared and defined as dynamic arrays
+
+* module_tools.f90
+	- <stencil_m1>, <order>: are not declared as parameters anymore
+
+* module_tools_post.f90
+	- <stencil_m1>, <order>: are not declared as parameters anymore

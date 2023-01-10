@@ -1,0 +1,51 @@
+[GENERAL]
+
+        VIS = T
+        INIT = 'SOD'
+        DIM = 2
+        NRV = 2
+
+[TIMESTEPPING]
+
+        CFL = 0.5
+        VIS_DT = F
+
+[WENO]
+        WEIGHTS = T
+        DUCROS_TREDUC = 0.1
+        PERCENT_WEIGHT = 0.15
+        SHOCK_SENSOR_TYPE = 'ADAMSSHARIFF'
+        ORDER_WENO = 7
+
+[MONITORING]
+
+        ITSHOW = 1
+        FREQ_RESTART = 500
+        ITLIM = F
+        ITMAX = 2
+        INITIAL_TIME = 0.0
+        TIME_OFFSET = 7.0968962141250196e-05
+        STAT = T
+        NSTAT = 30
+        DTIME = 7.0968962141250196e-06
+
+[POSTPRCESSING]
+
+        START_FILE = 1
+        END_FILE = 30
+
+[REACTING]
+         
+        NREAC = 0
+
+[GRID]
+        BCXMIN = 'EXTRAPOLATION'
+        BCXMAX = 'EXTRAPOLATION'
+        NUMPROCX = 2
+        NUMPROCY = 1
+
+
+
+
+
+

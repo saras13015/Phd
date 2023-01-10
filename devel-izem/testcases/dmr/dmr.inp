@@ -1,0 +1,52 @@
+[GENERAL]
+
+        VIS = F
+        INIT = 'DMR'
+        DIM = 2
+        NRV = 2
+
+[TIMESTEPPING]
+
+        CFL = 0.3
+        VIS_DT = F
+
+[WENO]
+
+        WEIGHTS = T
+        DUCROS_TREDUC = 0.1
+        PERCENT_WEIGHT = 0.15
+        SHOCK_SENSOR_TYPE = 'ADAMSSHARIFF'
+
+[MONITORING]
+
+        ITSHOW = 1
+        FREQ_RESTART = 500
+        ITLIM = F
+        ITMAX = 2
+        INITIAL_TIME = 0.0
+        TIME_OFFSET = 1.0e-10
+        STAT = T
+        NSTAT = 56
+        DTIME = 2.0E-08
+
+[POSTPRCESSING]
+
+        START_FILE = 1
+        END_FILE = 55
+
+[REACTING]
+         
+        NREAC = 0
+
+[GRID]
+        BCXMIN = 'EXTRAPOLATION'
+        BCXMAX = 'EXTRAPOLATION'
+        BCYMIN = 'POSTSHOCK_SLIPWALL'
+        BCYMAX = 'EXTRAPOLATION'
+        NUMPROCX = 4
+
+
+
+
+
+
